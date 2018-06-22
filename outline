@@ -1,0 +1,26 @@
+Review Class 
+
+	Instance Variables:
+	
+		(DONE)  id
+		(DONE)  title
+		(DONE)  review category
+
+		* image URL
+		* content
+		* date
+		* description/synopsis
+
+		** accessors
+
+Review Repository Class
+	
+	(DONE) This class should be annotated properly so that it can be injected into ReviewsController.
+
+	(DONE) It should have a constructor that creates your Review instances and populates a Map that stores your reviews, using each review’s id as the map key.
+
+	(DONE) It should have a method to find all reviews
+
+	(DONE) It should have a method to find one review by id
+
+Review Controller
