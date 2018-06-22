@@ -5,21 +5,30 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Repository;
+import org.wecancodeit.reviews.Review;
 
 @Repository
 public class ReviewRepository {
 
 	private Map<Long, Review> reviewList = new HashMap<>();
+	
+	/* Sample Reviews */
+	
+	public ReviewRepository() {
+		Review review1 = new Review(1L, "Java", "Java Description", "test_duck_pic.jpg");
 
-	public ReviewRepository(Review...reviews) {
+		reviewList.put(review1.getId(), review1);
+		
+
+	}
+
+	public ReviewRepository(Review... reviews) {
 		for(Review reviewEntry : reviews) {
 			reviewList.put(reviewEntry.getId(), reviewEntry);
 		}
 	}
 
-	public ReviewRepository(Review review) {
-		reviewList.put(review.getId(), review);
-	}
+
 
 	public Review findOne(long id) {
 		return reviewList.get(id);

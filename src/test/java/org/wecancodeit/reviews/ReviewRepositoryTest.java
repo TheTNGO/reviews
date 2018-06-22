@@ -12,11 +12,11 @@ public class ReviewRepositoryTest {
 
 	ReviewRepository testRepo;
 
-	Review testReview1 = new Review(1L, "Test 1", "Test 1 Review");
-	Review testReview2 = new Review(2L, "Test 2", "Test 2 Review");
+	Review testReview1 = new Review(1L, "Test 1", "Test 1 Title", "Test 1 Date");
+	Review testReview2 = new Review(2L, "Test 2", "Test 2 Review", "Test 1 Date");
 
 	@Test
-	public void shouldFindReviewOne() {
+	public void shouldAddAndFindReviewOne() {
 		testRepo = new ReviewRepository(testReview1);
 		Review result = testRepo.findOne(testReview1.getId());
 
@@ -24,7 +24,7 @@ public class ReviewRepositoryTest {
 	}
 
 	@Test
-	public void shouldAddMultipleReviews() {
+	public void shouldAddAndFindMultipleReviews() {
 		testRepo = new ReviewRepository(testReview1, testReview2);
 
 		Collection<Review> result = testRepo.findAll();
