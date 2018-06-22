@@ -11,24 +11,28 @@ import org.wecancodeit.reviews.Review;
 public class ReviewRepository {
 
 	private Map<Long, Review> reviewList = new HashMap<>();
-	
-	/* Sample Reviews */
-	
-	public ReviewRepository() {
-		Review review1 = new Review(1L, "Java", "Java Description", "test_duck_pic.jpg");
 
-		reviewList.put(review1.getId(), review1);
+	/* Sample Reviews */
+
+	public ReviewRepository() {
 		
+		Review review1 = new Review(54325L, "Life Changing", "THE childhood defining book", "Children's Books",
+				"LOVED this book as a child. Every time I read this book, it brings me back to the racous days of my youth, full of wonder and experimentation."
+				+  " A great read for kids of all ages. 5 Stars!", "5/28/2017", "review-thumbs-up.jpg");
+		
+		Review review2 = new Review(25389L, "Disgustingly Unrealistic", "What are they filling our kids' heads with these days?", "Children's Books", 
+				"How do we expect our children to keep useful information in their minds while filling it with the type of abnormal behaviors and ludicrous characters "
+				+ "contained in a book such as this? Keep away from your children at all costs. Terrible customer service.", "6/05/2018", "review-thumbs-down.jpg");
+		
+		reviewList.put(review1.getId(), review1);
 
 	}
 
 	public ReviewRepository(Review... reviews) {
-		for(Review reviewEntry : reviews) {
+		for (Review reviewEntry : reviews) {
 			reviewList.put(reviewEntry.getId(), reviewEntry);
 		}
 	}
-
-
 
 	public Review findOne(long id) {
 		return reviewList.get(id);
